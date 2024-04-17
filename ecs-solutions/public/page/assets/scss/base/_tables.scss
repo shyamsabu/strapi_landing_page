@@ -1,0 +1,157 @@
+// Table Styles
+table {
+  border-collapse: collapse;
+  width: 100%;
+  tr,
+  th,
+  td {
+    vertical-align: middle;
+  }
+  thead {
+    border: 1px solid #141414;
+    tr {
+      background-color: var(--global--color-black);
+      color: var(--global--color-white);
+      th {
+        color: inherit;
+        font-weight: $fw-600;
+        height: 46px;
+        text-transform: uppercase;
+        a {
+          color: inherit !important;
+          text-decoration: underline !important;
+          &:hover {
+            text-decoration: none !important;
+          }
+        }
+      }
+    }
+  }
+  tbody {
+    border: 1px solid #141414;
+    tr {
+      background-color: #0d0d0d;
+      &:nth-child(odd) {
+        background-color: #141414;
+      }
+    }
+  }
+  td,
+  th {
+    @include fontSize(13px);
+    height: auto !important;
+    padding: 12px 15px;
+    &.none {
+      height: 10px !important;
+      padding: 0 10px;
+    }
+    a {
+      color: var(--global--color-primary) !important;
+      display: inline;
+      &:hover {
+        color: var(--global--color-secondary) !important;
+        text-decoration: underline !important;
+      }
+    }
+    @include min(768) {
+      @include fontSize(11px);
+    }
+    @include min(992) {
+      @include fontSize(11px);
+    }
+    @include min(1200) {
+      @include fontSize(12px);
+    }
+    @include min(1600) {
+      @include fontSize(16px);
+    }
+    @include min(1850) {
+      @include fontSize(18px);
+    }
+  }
+  th {
+    color: var(--global--color-primary);
+    font-weight: $fw-600;
+    height: 34px;
+  }
+}
+table:not([class]),
+table[class=""] {
+  border-collapse: collapse;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  td {
+    min-height: 30px;
+  }
+}
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  table {
+    td,
+    th {
+      border: 1px solid var(--global--color-border);
+    }
+    th {
+      padding-left: 15px;
+    }
+  }
+}
+
+.table-responsive > .table-bordered {
+  border: 0;
+}
+.ui-datepicker-calendar {
+  td,
+  th {
+    padding: 8px 10px;
+  }
+  thead {
+    tr {
+      background-color: darken($primary-color, 7%);
+      th {
+        @include fontSize(15px);
+      }
+    }
+  }
+  tbody {
+    tr {
+      background: var(--global--color-white) !important;
+    }
+  }
+}
+.ui-datepicker {
+  @include box-shadow(0, 0, 15px, rgba($black, 0.2));
+  .ui-datepicker-header {
+    background-color: darken($primary-color, 5%);
+    color: var(--global--color-white);
+    height: 42px;
+    @include align-items(center);
+    display: flex !important;
+    @include justify-content(center);
+  }
+  .ui-datepicker-prev {
+    @include order(1);
+    margin-right: auto;
+    padding-left: 15px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  .ui-datepicker-title {
+    @include order(2);
+  }
+  .ui-datepicker-next {
+    @include order(3);
+    margin-left: auto;
+    padding-right: 15px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

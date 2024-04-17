@@ -1,0 +1,199 @@
+/* ===========================
+			Banner Section
+=========================== */
+.project_banner {
+  height: 775px;
+  background-size: cover!important;
+  background-position: center!important;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 118px;
+  @include max(1899) {
+    height: 730px;  
+  }
+  @include max(1799) {
+    height: 648px;  
+    margin-top: 117px;  
+  }
+  @include max(1599) {
+    height: 565px;
+    margin-top: 108px; 
+  }
+  @include max(1399) {
+    height: 485px;
+    margin-top: 94px; 
+  }
+  @include min(1200) {
+    max-height: 778px;
+  }
+  @include max(1199) {
+    height: 420px;
+  }
+  @include max(991) {
+    height: 310px;
+    margin-top: 84px; 
+  }
+  @include max(767) {
+    height: 235px;
+    margin-top: 85px; 
+  }
+  @include max(575) {
+    height: 250px;
+    background-position: center!important;
+    margin-top: 75px;
+  }
+  .banner-wrap{
+    width: 560px;
+    height: auto;
+    @include max(575) {
+      height: auto;
+      padding: 20px;
+      margin: 20px 0 20px 0px;
+      background: rgba(0, 0, 0, 0.2);
+      text-align: left;
+      width: auto;
+    }
+
+  }
+  .text-main{
+    color: $theme-red;
+    text-transform: uppercase;
+    font-size: 96px;
+    line-height: 85px;
+    font-family: $main-font;
+    font-weight: $fw-700;
+    margin-bottom: 25px;
+    @include max(1799) {
+      font-size: 90px;
+      line-height: 80px;
+      margin-bottom: 15px;
+    }
+    @include max(1599) {
+      font-size: 75px;
+      margin-bottom: 10px;
+      line-height: 70px;
+    }
+    @include max(1399) {
+      font-size: 70px;
+      margin-bottom: 5px;
+      line-height: 65px;
+    }
+    @include max(1199) {
+      font-size: 63px;
+      line-height: 60px;
+    }
+      @include max(991) {
+      font-size: 50px;
+      line-height: 48px;
+    }
+    @include max(767) {
+       font-size: 35px;
+      line-height: 30px;
+    }
+    @include max(575) {
+      font-size: 32px;
+    }
+
+  }
+  .text-small{
+    color: $black;
+    font-family: $main-font;
+    font-weight: $fw-700;
+    font-size: 64px;
+    text-transform: uppercase;
+    line-height: 1;  
+    margin-bottom: 20px;  
+    @include max(1799) {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+    @include max(1599) {
+      font-size: 50px;
+      margin-bottom: 10px;
+    }
+    @include max(1399) {
+    font-size: 46px;
+    margin-bottom: 5px;
+    }
+    @include max(1199) {
+    font-size: 42px;
+    margin-bottom: 8px;
+    }
+    @include max(991) {
+      font-size: 33px;
+    }
+    @include max(767) {
+      font-size: 30px;
+      margin-bottom: 5px;
+    }
+    @include max(575) {
+      font-size: 28px;
+    }
+
+  }
+  .text-sub{
+    color: $black;
+    font-family: $main-font;
+    font-weight: $fw-700;
+    font-size: 19px;
+    margin-bottom: 20px;
+    @include max(1599) {
+      font-size: 15px;
+    } 
+    @include max(1199) {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+    @include max(991) {
+      font-size: 11px;
+      margin-bottom: 13px;
+    }
+    @include max(767) {
+      margin-bottom: 10px;
+    }
+    @include max(575) {
+      color: $white;
+    }
+
+  }
+}
+
+.down_arrow{
+  height: 60px;
+  width: 125px;
+  left: 46%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  position: absolute;
+  bottom: -1px;
+  background: $white;
+  border-radius: 62px 62px 0 0;
+  @include max(1599) {
+  height: 55px;
+  width: 110px;
+  }
+  @include max(1199) {
+  display: none;
+  }
+
+  svg{
+    width: 22px;
+    height: 34px;
+    fill: $theme-red;
+    @include max(1199) {
+    width: 18px;
+    height: 28px;
+    @include max(767) {
+      width: 15px;
+      height: 20px;
+    }
+    }
+  }
+  &:hover{
+    svg{
+      fill: $black!important;
+    }
+  }
+}

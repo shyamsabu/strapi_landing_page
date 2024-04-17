@@ -1,0 +1,70 @@
+/* ===========================
+          Faq
+=========================== */
+.faq_accordion {
+  & > li {
+    @include border-radius(4px);
+    overflow: hidden;
+  }
+  .expand {
+    @include flex-align(vhCenter);
+    cursor: pointer;
+    @include fontSize(30px);
+    font-style: normal;
+    font-weight: $fw-300;
+    line-height: 1;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    width: 30px;
+    &:before {
+      content: "+";
+    }
+  }
+  .title {
+    background-color: #efefef;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color: var(--global--color-primary);
+    cursor: pointer;
+    @include fontSize(16px);
+    font-weight: $fw-600;
+    line-height: 1.3;
+    padding: 10px 40px 10px 10px;
+  }
+  .faq_content {
+    background-color: #fefefe;
+    color: var(--global-color-primary);
+    @include fontSize(14px);
+    padding: 10px 40px 10px 10px;
+    p,
+    li {
+      color: inherit;
+      a {
+        color: var(--global-color-secondary);
+        text-decoration: underline;
+        &:hover {
+          color: var(--global-color-primary);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  li {
+    margin-bottom: 10px;
+    position: relative;
+    .faq_content {
+      display: none;
+    }
+    &.opened {
+      .title {
+        background-color: var(--global--color-primary);
+        color: var(--global--color-white);
+      }
+      .expand {
+        &:before {
+          content: "×";
+        }
+      }
+    }
+  }
+}

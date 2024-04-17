@@ -1,0 +1,126 @@
+.owl-theme {
+  // Styling Next and Prev buttons
+  .owl-nav {
+    margin-top: 10px;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+
+    [class*="owl-"] {
+      color: $nav-color;
+      font-size: $nav-font-size;
+      margin: $nav-margin;
+      padding: $nav-padding;
+      background: $nav-background;
+      display: inline-block;
+      cursor: pointer;
+      border-radius: 3px;
+
+      &:hover {
+        background: $nav-background-hover;
+        color: $nav-color-hover;
+        text-decoration: none;
+      }
+    }
+    .disabled {
+      opacity: $nav-disabled-opacity;
+      cursor: default;
+    }
+  }
+
+  // Styling dots
+  .owl-nav.disabled + .owl-dots {
+    margin-top: 10px;
+  }
+
+  .owl-dots {
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+
+    .owl-dot {
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+
+      span {
+        background: $dot-background;
+        @include border-radius(2px);
+        display: block;
+        height: 3px;
+        margin: $dot-margin;
+        -webkit-backface-visibility: visible;
+        transition: opacity 200ms ease;
+        width: 40px;
+      }
+
+      &.active,
+      &:hover {
+        span {
+          background: $dot-background-active;
+        }
+      }
+    }
+  }
+  &.theme-white {
+    .owl-nav {
+      [class*="owl-"] {
+        background: $nav-color;
+        color: $nav-background;
+        &:hover {
+          background: rgba($nav-color, 0.5);
+          color: $nav-background;
+        }
+      }
+    }
+    .owl-dots {
+      .owl-dot {
+        span {
+          background: rgba($color-white, 0.5);
+        }
+        &.active,
+        &:hover {
+          span {
+            background: $color-white;
+          }
+        }
+      }
+    }
+  }
+  @include min(768) {
+    .owl-dots {
+      .owl-dot {
+        span {
+          height: 3px;
+          width: 50px;
+        }
+      }
+    }
+  }
+  @include min(1200) {
+    .owl-dots {
+      .owl-dot {
+        span {
+          width: 65px;
+        }
+      }
+    }
+  }
+  @include min(1600) {
+    .owl-dots {
+      .owl-dot {
+        span {
+          height: $dot-height;
+          width: 80px;
+        }
+      }
+    }
+  }
+  @include min(1900) {
+    .owl-dots {
+      .owl-dot {
+        span {
+          width: $dot-width;
+        }
+      }
+    }
+  }
+}

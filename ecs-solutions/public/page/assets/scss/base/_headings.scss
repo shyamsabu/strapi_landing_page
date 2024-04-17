@@ -1,0 +1,411 @@
+// Heading Styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $black;
+  display: block;
+  font-weight: $fw-600;
+  line-height: 1.2;
+  font-family: $main-font;
+  margin: 0 0 15px;
+  padding: 0;
+  text-transform: uppercase;
+  a {
+    background-color: transparent;
+    color: inherit;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: none !important;
+    &:hover {
+      color: var(--global--color-primary);
+    }
+  }
+  & + p,
+  & + ul,
+  & + ol {
+  }
+  & + blockquote {
+    margin-top: 20px !important;
+  }
+  @include max(1599) {
+    margin-bottom: 10px;
+    & + p,
+    & + ul,
+    & + ol {
+    }
+    & + blockquote {
+      margin-top: 10px !important;
+    }
+  }
+  @include max(767) {
+    margin-bottom: 7px;
+  }
+}
+h1 {
+  @include fontSize(28px);
+  @include min(768) {
+    @include fontSize(32px);
+  }
+  @include min(1200) {
+    @include fontSize(46px);
+  }
+  @include min(1600) {
+    @include fontSize(60px);
+  }
+  @include min(1850) {
+    @include fontSize(70px);
+  }
+}
+h2 {
+  @include fontSize(28px);
+  @include min(768) {
+    @include fontSize(32px);
+  }
+    @include min(992) {
+    @include fontSize(38px);
+  }
+  @include min(1200) {
+    @include fontSize(38px);
+  }
+    @include min(1400) {
+    @include fontSize(45px);
+  }
+  @include min(1600) {
+    @include fontSize(50px);
+  }
+  @include min(1850) {
+    @include fontSize(55px);
+  }
+}
+h3{
+
+}
+h4 {
+  @include fontSize(18px);
+  @include min(768) {
+    @include fontSize(18px);
+  }
+    @include min(992) {
+    @include fontSize(23px);
+  }
+  @include min(1200) {
+    @include fontSize(20px);
+  }
+  @include min(1400) {
+    @include fontSize(23px);
+  }
+  @include min(1600) {
+    @include fontSize(30px);
+  }
+  @include min(1850) {
+    @include fontSize(32px);
+  }
+}
+h5,
+h6 {
+  @include fontSize(17px);
+  @include min(768) {
+    @include fontSize(19px);
+  }
+  @include min(1200) {
+    @include fontSize(17px);
+  }
+  @include min(1600) {
+    @include fontSize(22px);
+  }
+  @include min(1850) {
+    @include fontSize(22px);
+  }
+}
+.elementor-widget-heading {
+  background-color: transparent;
+  color: var(--global--color-white);
+  display: block;
+  line-height: 1;
+  margin-bottom: 5px !important;
+  position: relative;
+  text-align: left;
+  text-transform: uppercase;
+  .elementor-heading-title {
+    color: inherit !important;
+    font-family: var(--global--font-family-primary);
+    font-weight: $fw-600;
+    line-height: 1;
+    padding-bottom: 0;
+    position: relative;
+    text-transform: inherit;
+    a {
+      background-color: transparent;
+      color: inherit;
+      position: relative;
+      text-decoration: none !important;
+      &:hover {
+        color: var(--global--color-secondary) !important;
+      }
+    }
+  }
+  .sub-text {
+    @include flex-align(vCenter);
+    font-family: var(--global--font-family-secondary);
+    font-weight: $fw-500;
+    @include fontSize(16px);
+    margin-bottom: 15px;
+    text-transform: none;
+  }
+  .elementor-heading-title {
+    @include fontSize(22px);
+    &.elementor-size-small {
+      @include fontSize(16px);
+    }
+    &.elementor-size-medium {
+      @include fontSize(18px);
+    }
+    &.elementor-size-large {
+      @include fontSize(21px);
+    }
+    &.elementor-size-xl {
+      @include fontSize(28px);
+    }
+    &.elementor-size-xxl {
+      @include fontSize(35px);
+    }
+  }
+  &.center {
+    text-align: center;
+    .sub-text {
+      @include justify-content(center);
+    }
+  }
+  &.no-transform {
+    text-transform: none;
+  }
+  &.text-black {
+    color: var(--global--color-black);
+    .elementor-heading-title {
+      a {
+        &:hover {
+          color: var(--global--color-secondary) !important;
+        }
+      }
+    }
+  }
+  &.text-secondary {
+    color: var(--global--color-secondary);
+  }
+  @include min(768) {
+    .elementor-heading-title {
+      @include fontSize(28px);
+      &.elementor-size-small {
+        @include fontSize(18px);
+      }
+      &.elementor-size-medium {
+        @include fontSize(20px);
+      }
+      &.elementor-size-large {
+        @include fontSize(24px);
+      }
+      &.elementor-size-xl {
+        @include fontSize(32px);
+      }
+      &.elementor-size-xxl {
+        @include fontSize(40px);
+      }
+    }
+    .sub-text {
+      @include fontSize(18px);
+      margin-bottom: 20px;
+    }
+  }
+  @include min(992) {
+    .elementor-heading-title {
+      @include fontSize(30px);
+      &.elementor-size-small {
+        @include fontSize(20px);
+      }
+      &.elementor-size-medium {
+        @include fontSize(22px);
+      }
+      &.elementor-size-large {
+        @include fontSize(27px);
+      }
+      &.elementor-size-xl {
+        @include fontSize(36px);
+      }
+      &.elementor-size-xxl {
+        @include fontSize(46px);
+      }
+    }
+    .sub-text {
+      @include fontSize(20px);
+    }
+  }
+  @include min(1200) {
+    .elementor-heading-title {
+      @include fontSize(28px);
+      &.elementor-size-small {
+        @include fontSize(18px);
+      }
+      &.elementor-size-medium {
+        @include fontSize(20px);
+      }
+      &.elementor-size-large {
+        @include fontSize(24px);
+      }
+      &.elementor-size-xl {
+        @include fontSize(32px);
+      }
+      &.elementor-size-xxl {
+        @include fontSize(40px);
+      }
+    }
+    .sub-text {
+      @include fontSize(19px);
+    }
+  }
+  @include min(1600) {
+    .elementor-heading-title {
+      @include fontSize(40px);
+      &.elementor-size-small {
+        @include fontSize(27px);
+      }
+      &.elementor-size-medium {
+        @include fontSize(30px);
+      }
+      &.elementor-size-large {
+        @include fontSize(36px);
+      }
+      &.elementor-size-xl {
+        @include fontSize(48px);
+      }
+      &.elementor-size-xxl {
+        @include fontSize(62px);
+      }
+    }
+    .sub-text {
+      @include fontSize(30px);
+      margin-bottom: 30px;
+    }
+  }
+  @include min(1850) {
+    .elementor-heading-title {
+      @include fontSize(70px);
+      &.elementor-size-small {
+        @include fontSize(45px);
+      }
+      &.elementor-size-medium {
+        @include fontSize(50px);
+      }
+      &.elementor-size-large {
+        @include fontSize(60px);
+      }
+      &.elementor-size-xl {
+        @include fontSize(80px);
+      }
+      &.elementor-size-xxl {
+        @include fontSize(120px);
+      }
+    }
+    .sub-text {
+      @include fontSize(32px);
+      margin-bottom: 40px;
+      &:before {
+        width: 48px;
+      }
+    }
+  }
+}
+
+.text-white {
+  h2{
+     color: var(--global--color-white) !important;
+  }
+}
+
+
+.fw-34{
+  font-weight: $fw-600;
+  font-family: $main-font;
+  line-height: 38px;
+  margin-bottom: 25px;
+  text-transform: capitalize;
+  @include fontSize(18px);
+  @include min(200) {
+    line-height: 25px;
+    margin-bottom: 5px;
+
+  }
+  @include min(500) {
+    margin-bottom: 10px;
+    line-height: 20px;
+  }
+  @include min(768) {
+    @include fontSize(22px);
+    line-height: 26px;
+  }
+    @include min(992) {
+    @include fontSize(24px);
+    
+  }
+  @include min(1200) {
+    @include fontSize(22px);
+    line-height: 24px;
+    margin-bottom: 10px;
+  }
+  @include min(1400) {
+    @include fontSize(24px);
+    line-height: 28px;
+    margin-bottom: 10px;
+  }
+  @include min(1600) {
+    @include fontSize(30px);
+    line-height: 35px;
+  }
+  @include min(1850) {
+    @include fontSize(34px);
+    line-height: 38px;
+  }
+}
+
+.benefit_sec{
+  .fw-34{
+  @include fontSize(18px);
+  @include min(200) {
+    line-height: 25px;
+    margin-bottom: 5px;
+
+  }
+  @include min(500) {
+    margin-bottom: 10px;
+    line-height: 20px;
+  }
+  @include min(768) {
+    @include fontSize(18px);
+    line-height: 26px;
+  }
+    @include min(992) {
+    @include fontSize(15px);
+    line-height: 22px;
+    
+  }
+  @include min(1200) {
+    @include fontSize(19px);
+    line-height: 25px;
+    margin-bottom: 10px;
+  }
+
+  @include min(1600) {
+    @include fontSize(26px);
+    line-height: 28px;
+    margin-bottom: 15px;
+  }
+  @include min(1850) {
+    @include fontSize(28px);
+    line-height: 35px!important;
+  }
+}
+
+}

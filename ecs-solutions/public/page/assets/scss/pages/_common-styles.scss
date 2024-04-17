@@ -1,0 +1,537 @@
+.curP {
+  cursor: pointer;
+}
+.dFlex {
+  @include flexbox();
+}
+.m-l-auto {
+  margin-left: auto;
+}
+.m-t-auto {
+  margin-top: auto;
+}
+.vhCenter {
+  @include flex-align(vhCenter);
+}
+.vCenter {
+  @include flex-align(vCenter);
+}
+.hCenter {
+  @include flex-align(hCenter);
+}
+.vBottom {
+  @include flex-align(vBottom);
+}
+.hRight {
+  @include flex-align(hRight);
+}
+.vCenHRight {
+  @include flex-align(vCenHRight);
+}
+.vhEnd {
+  @include flex-align(vhEnd);
+}
+.vBtmHcntr {
+  @include align-items(end);
+  @include flexbox();
+  @include justify-content(center);
+}
+.jc-center {
+  @include justify-content(center);
+}
+.no-wrap {
+  @include flex-wrap(nowrap);
+}
+.align-center {
+  @include justify-content(center);
+}
+.grecaptcha-badge {
+  display: none !important;
+}
+.center {
+  @include justify-content(center);
+  text-align: center;
+  .btn {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.bottom-space {
+  padding-bottom: 30px;
+  @include min(768) {
+    padding-bottom: 40px;
+  }
+  @include min(1200) {
+    padding-bottom: 55px;
+  }
+  @include min(1600) {
+    padding-bottom: 70px;
+  }
+  @include max(1199) {
+    &.elementor-section {
+      padding-bottom: 15px;
+    }
+  }
+}
+.clear {
+  clear: both;
+  display: block;
+}
+.align-items_normal {
+  .elementor-widget-wrap {
+    align-content: unset;
+  }
+}
+.bg-primary {
+  background-color: var(--global--color-primary);
+}
+.text-black {
+  color: var(--global--color-black) !important;
+  p,
+  li,
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  blockquote {
+    color: inherit !important;
+  }
+  a {
+    color: inherit !important;
+    &:hover {
+      color: var(--global--color-secondary) !important;
+      text-decoration: none !important;
+    }
+  }
+}
+// Font Family
+.ff-josefin {
+  font-family: var(--font-josefin) !important;
+  p,
+  li,
+  a {
+    font-family: inherit !important;
+  }
+  &.elementor-widget-heading {
+    .elementor-heading-title {
+      font-family: var(--font-josefin);
+    }
+  }
+}
+.ff-montserat {
+  font-family: var(--font-montserat) !important;
+  p,
+  li,
+  a {
+    font-family: inherit !important;
+  }
+}
+// Font Sizes
+.fs-20 {
+  @include fontSize(13px);
+  p,
+  li {
+    font-size: inherit !important;
+  }
+  @include min(768) {
+    @include fontSize(12px);
+  }
+  @include min(992) {
+    @include fontSize(14px);
+  }
+  @include min(1200) {
+    @include fontSize(12px);
+  }
+  @include min(1600) {
+    @include fontSize(18px);
+  }
+  @include min(1850) {
+    @include fontSize(20px);
+  }
+}
+.fs-25 {
+  @include fontSize(12px);
+  p,
+  li {
+    font-size: inherit !important;
+  }
+  @include min(768) {
+    @include fontSize(12px);
+  }
+  @include min(992) {
+    @include fontSize(14px);
+  }
+  @include min(1200) {
+    @include fontSize(12px);
+  }
+  @include min(1600) {
+    @include fontSize(18px);
+  }
+  @include min(1850) {
+    @include fontSize(25px);
+  }
+}
+.fs-30 {
+  @include fontSize(14px);
+  p,
+  li {
+    font-size: inherit !important;
+  }
+  @include min(768) {
+    @include fontSize(14px);
+  }
+  @include min(992) {
+    @include fontSize(14px);
+  }
+  @include min(1200) {
+    @include fontSize(14px);
+  }
+  @include min(1600) {
+    @include fontSize(18px);
+  }
+  @include min(1850) {
+    @include fontSize(30px);
+  }
+}
+.fs-40 {
+  @include fontSize(14px);
+  p,
+  li {
+    font-size: inherit !important;
+  }
+  @include min(768) {
+    @include fontSize(16px);
+  }
+  @include min(992) {
+    @include fontSize(18px);
+  }
+  @include min(1200) {
+    @include fontSize(16px);
+  }
+  @include min(1600) {
+    @include fontSize(24px);
+  }
+  @include min(1850) {
+    @include fontSize(40px);
+  }
+}
+// Font Weight
+.fw-light {
+  font-weight: $fw-300 !important;
+  p,
+  li {
+    font-weight: inherit !important;
+  }
+}
+.fw-regular {
+  font-weight: $fw-400 !important;
+  p,
+  li {
+    font-weight: inherit !important;
+  }
+}
+.fw-medium {
+  font-weight: $fw-500 !important;
+  p,
+  li {
+    font-weight: inherit !important;
+  }
+}
+.fw-semibold {
+  font-weight: $fw-600 !important;
+  p,
+  li {
+    font-weight: inherit !important;
+  }
+}
+.fw-bold {
+  font-weight: $fw-700 !important;
+  p,
+  li {
+    font-weight: inherit !important;
+  }
+}
+.no-transform {
+  text-transform: none !important;
+}
+// Margin Spacing
+.m-b-0 {
+  margin-bottom: 0 !important;
+}
+.m-b-10 {
+  margin-bottom: 10px !important;
+}
+.m-b-30 {
+  margin-bottom: 10px !important;
+  @include min(768) {
+    margin-bottom: 20px !important;
+  }
+  @include min(1600) {
+    margin-bottom: 30px !important;
+  }
+}
+.m-t-0 {
+  margin-top: 0 !important;
+}
+// Padding Spacing
+.p-b-0 {
+  padding-bottom: 0 !important;
+}
+.p-b-10 {
+  padding-bottom: 10px !important;
+}
+.p-b-20 {
+  padding-bottom: 20px !important;
+}
+.p-t-0 {
+  padding-top: 0 !important;
+}
+.p-t-10 {
+  padding-top: 10px !important;
+}
+.p-l-0 {
+  padding-left: 0 !important;
+}
+.no-border {
+  border: 0 !important;
+}
+#content_wrapper {
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+.tw-row {
+  --bs-gutter-x: 30px;
+  @include flexbox();
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  & > * {
+    flex-shrink: 0;
+    margin-bottom: calc(var(--bs-gutter-x) * 0.5);
+    margin-top: calc(var(--bs-gutter-x) * 0.5);
+    max-width: 100%;
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    position: relative;
+    width: 100%;
+  }
+  .auto-width {
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+[class*="tw-col-"] {
+  min-height: 1px;
+  position: relative;
+  width: 100%;
+}
+.tw-col-6 {
+  @include flex(0, 0, 50%);
+  width: 50%;
+}
+.fit-height {
+  height: 100% !important;
+}
+.owl-theme {
+  .owl-nav {
+    &.disabled {
+      & + .owl-dots {
+        margin-top: 15px;
+        @include min(1600) {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+
+.cmn-space{
+  padding: 120px 0px;
+  @include max(1799) {
+    padding: 110px 0px;
+  }
+  @include max(1599) {
+     padding: 90px 0px;
+  }
+  @include max(1399) {
+     padding: 70px 0px;
+  }
+  @include max(1199) {
+     padding: 60px 0px;
+  }
+  @include max(991) {
+     padding: 40px 0px;
+  }
+   @include max(575) {
+     padding: 30px 0px;
+  }
+}
+.cen-ter{
+  text-align: center;
+}
+
+.pad-eight{
+  padding: 85px 0 100px 0px;
+  @include max(1599) {
+     padding: 80px 0 90px 0px;
+  }
+  @include max(1599) {
+     padding: 70px 0 85px 0px;
+  }
+  @include max(1399) {
+    padding: 60px 0 75px 0px;
+  }
+  @include max(1199) {
+    padding: 50px 0 65px 0px;
+  }
+  @include max(991) {
+    padding: 40px 0 55px 0px;
+  }
+  @include max(765) {
+    padding: 40px 0 55px 0px;
+  }
+  @include max(575) {
+    padding: 40px 0 45px 0px;
+  }
+}
+
+
+.half-container {
+  @include min(1200) {
+    max-width: 570px !important;
+  }
+  @include min(1600) {
+    max-width: 680px !important;
+  }
+  @include max(1399) {
+    max-width: 520px !important;
+  }
+  @include max(1199) {
+    max-width: 935px !important;
+  }
+  @include max(991) {
+    max-width: 695px !important;
+  }
+  @include max(767) {
+    max-width: 520px !important;
+  }
+  @include max(575) {
+    max-width: 350px !important;
+  }
+}
+
+
+.full-width {
+  align-items: center;
+  background: $grey;
+  @include min(1200) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .col-left{
+    display: none;
+    @include min(1200) {
+      flex: 0 0 50%;
+      max-width: 50%;
+      display: block;
+   }
+   figure{
+    img{
+      display: block;
+    }
+   }
+  }
+  .col-right{
+    @include min(1200) {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding-left: 60px;
+   }
+   @include max(1399) {
+    padding-left: 40px;
+   }
+   @include max(1199) {
+    padding: 50px 0 50px 0px;
+   }
+   @include max(991) {
+    padding: 40px 0 40px 0px;
+   }
+   @include max(575) {
+    padding: 30px 0 30px 0px;
+   }
+  }
+}
+
+
+.cmn-lst li {
+    position: relative;
+    padding: 5px 0 5px 20px;
+    color: $black;
+    color: $black;
+    font-family: $main-font;
+    font-size: inherit;
+    font-weight: $fw-300;
+    line-height: 1.4;
+
+    &:before{
+      content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background: var(--global--color-secondary);
+    }
+    &:hover{
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+    color: #000;
+    margin-left: 20px;
+    cursor: pointer;
+    }
+    @include min(320) {
+    @include fontSize(13px);
+  }
+
+  @include min(1200) {
+    @include fontSize(13px);
+  }
+  @include min(1600) {
+    @include fontSize(16px);
+  }
+  @include min(1850) {
+    @include fontSize(17px);
+  }
+}
+
+
+
+.fs-70 {
+  @include min(200) {
+    @include fontSize(40px);
+  }
+  @include min(576) {
+    @include fontSize(45px);
+  }
+  @include min(768) {
+    @include fontSize(50px);
+  }
+  @include min(992) {
+    @include fontSize(55px);
+  }
+  @include min(1200) {
+    @include fontSize(60px);
+  }
+  @include min(1600) {
+    @include fontSize(65px);
+  }
+  @include min(1850) {
+    @include fontSize(70px);
+  }
+}
+

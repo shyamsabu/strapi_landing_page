@@ -1,0 +1,140 @@
+@include min(575) {
+}
+// Min-width 575
+@include min-max(575, 767) {
+}
+@include min(768) {
+  .ipad-clear {
+    clear: both;
+    display: block;
+  }
+}
+// Min-width 768
+@include min(992) {
+}
+// Min-width 992
+@include min-max(768, 1199) {
+}
+// Min-width 768  and Max-width 1199
+@include min-max(992, 1199) {
+}
+@include min(1200) {
+  .desktop-clear {
+    clear: both;
+    display: block;
+  }
+}
+// Min-width 1200
+@include min-max(1200, 1599) {
+}
+// 1200 1599
+@include min(1600) {
+  p {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6 {
+      margin: 0;
+      margin-top: 30px;
+    }
+  }
+  blockquote {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6 {
+      margin-top: 30px;
+    }
+  }
+  ul,
+  ol {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + h5,
+    & + h6 {
+      margin-top: 30px;
+    }
+  }
+}
+a:hover{
+  color: $theme-red;
+}
+// Min-width 1600
+@include min(1850) {
+}
+// Min-width 1850
+@include max(1599) {
+}
+@include max(1199) {
+  .owl-theme {
+    .owl-nav {
+      &.disabled {
+        & + .owl-dots {
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+}
+// max width 1199px
+@include max(991) {
+}
+// Max-width 991
+@include max(767) {
+}
+// Max-width 767
+@include max(574) {
+}
+// Max-width 574
+// // Browser Hack for Firefox Only
+// @-moz-document url-prefix() {
+//   @include placeholder {
+//     line-height: 54px;
+//   }
+//   textarea {
+//     @include placeholder {
+//       line-height: 1;
+//     }
+//   }
+//   .form-elements {
+//     padding-bottom: 0 !important;
+//     padding-top: 0 !important;
+//   }
+// }
+
+// Browser Hack for Firefox Only
+@-moz-document url-prefix() {
+.input-holder{
+   @include placeholder {
+      line-height: 1;
+      height: auto;
+    }
+}
+textarea {
+    height: auto;
+    line-height: 1;
+  }
+  .form-elements {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+
+
+

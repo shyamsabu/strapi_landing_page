@@ -1,0 +1,132 @@
+/* ===========================
+			Header Section
+=========================== */
+.project_header {
+  padding: 15px 0px;
+  @include transition(all, ease, 0.5s);
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  background: $white;
+  @include max(1399) {
+    padding: 10px 0px;
+  }
+  .header-right{
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    .call-wrap{
+      display: flex;
+      align-items: center;
+      .svg-wrap{
+        width: 50px;
+        height: 50px;
+        background: $theme-red;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        margin-right: 10px;
+        @include max(1599) {
+           width: 48px;
+           height: 48px;
+        }
+        @include max(991) {
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+        }
+        @include max(767) {
+        width: 35px;
+        height: 35px;
+        }
+        svg{
+          fill: $white;
+          width: 20px;
+          @include max(991) {
+            width: 17px;
+          }
+          @include max(767) {
+            width: 15px;
+          }
+        }
+      }
+      .tel-wrap{
+        @include max(575) {
+           display: none;
+        }
+        .anc-txt{
+          font-weight: $fw-700;
+          font-size: 35px;
+          @include max(1599) {
+            font-size: 26px;
+          }
+          @include max(1399) {
+            font-size: 24px;
+          }
+          @include max(1199) {
+            font-size: 24px;
+          }
+          @include max(991) {
+            font-size: 20px;
+          }
+          @include max(767) {
+            font-size: 18px;
+          }
+          &:hover{
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+  .logo-wrap{
+    img{
+      @include max(1599) {
+         height: 75px;
+      }
+      @include max(1399) {
+         height: 70px;
+      }
+      @include max(991) {
+         height: 60px;
+      }
+      @include max(575) {
+         height: 50px;
+      }
+    }
+  }
+}
+
+.fw-40{
+          font-weight: $fw-600;
+          font-size: 40px;
+          text-transform: capitalize;
+          margin-bottom: 30px;
+          @include max(1599) {
+            font-size: 35px;
+            margin-bottom: 20px;
+          }
+          @include max(1399) {
+            font-size: 33px;
+            margin-bottom: 15px;
+          }
+          @include max(1199) {
+            font-size: 30px;
+            margin-bottom: 15px;
+          }
+          @include max(991) {
+            font-size: 26px;
+            margin-bottom: 10px;
+          }
+          @include max(767) {
+            font-size: 24px;
+          }
+}
+
+
+.project_header.slim {
+    box-shadow: 0 1px 10px rgba(0,0,0,.60);
+    -webkit-box-shadow: 0 1px 10px rgba(0,0,0,.20);
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
