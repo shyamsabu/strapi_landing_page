@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "automated_secs",
+  "info": {
+    "singularName": "automated-sec",
+    "pluralName": "automated-secs",
+    "displayName": "automated_sec"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

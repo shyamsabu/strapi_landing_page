@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "franco_secs",
+  "info": {
+    "singularName": "franco-sec",
+    "pluralName": "franco-secs",
+    "displayName": "franco_sec"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "frnc_head": {
+      "type": "string"
+    },
+    "para_text": {
+      "type": "blocks"
+    },
+    "franc_img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "kind": "singleType",
+  "collectionName": "banner_texts",
+  "info": {
+    "singularName": "banner-text",
+    "pluralName": "banner-texts",
+    "displayName": "Banner text",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "TextMain": {
+      "type": "string"
+    },
+    "TextSmall": {
+      "type": "string"
+    },
+    "TextSub": {
+      "type": "string"
+    },
+    "banner_img": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "section_1_heading": {
+      "type": "string"
+    },
+    "contact_head": {
+      "type": "string"
+    },
+    "contact_bg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "get_quote": {
+      "type": "string"
+    },
+    "get_quote_bg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

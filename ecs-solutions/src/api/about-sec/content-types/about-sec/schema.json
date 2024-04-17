@@ -1,0 +1,61 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_secs",
+  "info": {
+    "singularName": "about-sec",
+    "pluralName": "about-secs",
+    "displayName": "about_sec",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sec_title_1": {
+      "type": "string"
+    },
+    "sec_title_2": {
+      "type": "string"
+    },
+    "sec_subText": {
+      "type": "string"
+    },
+    "on_e": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "second_img": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "background": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "abt_pre": {
+      "type": "blocks"
+    }
+  }
+}

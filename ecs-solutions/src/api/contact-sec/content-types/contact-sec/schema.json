@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_secs",
+  "info": {
+    "singularName": "contact-sec",
+    "pluralName": "contact-secs",
+    "displayName": "contact_sec"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "contact_svg": {
+      "type": "richtext"
+    },
+    "heading": {
+      "type": "string"
+    }
+  }
+}

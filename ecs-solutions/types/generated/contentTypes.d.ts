@@ -590,6 +590,53 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
+export interface PluginI18NLocale extends Schema.CollectionType {
+  collectionName: 'i18n_locale';
+  info: {
+    singularName: 'locale';
+    pluralName: 'locales';
+    collectionName: 'locales';
+    displayName: 'Locale';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 50;
+        },
+        number
+      >;
+    code: Attribute.String & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUsersPermissionsPermission
   extends Schema.CollectionType {
   collectionName: 'up_permissions';
@@ -741,46 +788,267 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface PluginI18NLocale extends Schema.CollectionType {
-  collectionName: 'i18n_locale';
+export interface ApiAboutSecAboutSec extends Schema.SingleType {
+  collectionName: 'about_secs';
   info: {
-    singularName: 'locale';
-    pluralName: 'locales';
-    collectionName: 'locales';
-    displayName: 'Locale';
+    singularName: 'about-sec';
+    pluralName: 'about-secs';
+    displayName: 'about_sec';
     description: '';
   };
   options: {
-    draftAndPublish: false;
-  };
-  pluginOptions: {
-    'content-manager': {
-      visible: false;
-    };
-    'content-type-builder': {
-      visible: false;
-    };
+    draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-          max: 50;
-        },
-        number
-      >;
-    code: Attribute.String & Attribute.Unique;
+    sec_title_1: Attribute.String;
+    sec_title_2: Attribute.String;
+    sec_subText: Attribute.String;
+    on_e: Attribute.Media;
+    second_img: Attribute.Media;
+    background: Attribute.Media;
+    abt_pre: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'plugin::i18n.locale',
+      'api::about-sec.about-sec',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'plugin::i18n.locale',
+      'api::about-sec.about-sec',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAutomatedSecAutomatedSec extends Schema.SingleType {
+  collectionName: 'automated_secs';
+  info: {
+    singularName: 'automated-sec';
+    pluralName: 'automated-secs';
+    displayName: 'automated_sec';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heading: Attribute.String;
+    text: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::automated-sec.automated-sec',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::automated-sec.automated-sec',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAutomatedSliderAutomatedSlider
+  extends Schema.CollectionType {
+  collectionName: 'automated_sliders';
+  info: {
+    singularName: 'automated-slider';
+    pluralName: 'automated-sliders';
+    displayName: 'automated_slider';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slider_head: Attribute.String;
+    slider_img: Attribute.Media;
+    para_text: Attribute.Blocks;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::automated-slider.automated-slider',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::automated-slider.automated-slider',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBannerTextBannerText extends Schema.SingleType {
+  collectionName: 'banner_texts';
+  info: {
+    singularName: 'banner-text';
+    pluralName: 'banner-texts';
+    displayName: 'Banner text';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    TextMain: Attribute.String;
+    TextSmall: Attribute.String;
+    TextSub: Attribute.String;
+    banner_img: Attribute.Media;
+    section_1_heading: Attribute.String;
+    contact_head: Attribute.String;
+    contact_bg: Attribute.Media;
+    get_quote: Attribute.String;
+    get_quote_bg: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::banner-text.banner-text',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::banner-text.banner-text',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBenefitsSecBenefitsSec extends Schema.CollectionType {
+  collectionName: 'benefits_secs';
+  info: {
+    singularName: 'benefits-sec';
+    pluralName: 'benefits-secs';
+    displayName: 'Benefits_sec';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    product_img: Attribute.Media;
+    heading: Attribute.String;
+    discription: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::benefits-sec.benefits-sec',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::benefits-sec.benefits-sec',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactSecContactSec extends Schema.CollectionType {
+  collectionName: 'contact_secs';
+  info: {
+    singularName: 'contact-sec';
+    pluralName: 'contact-secs';
+    displayName: 'contact_sec';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contact_svg: Attribute.RichText;
+    heading: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-sec.contact-sec',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contact-sec.contact-sec',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFrancoSecFrancoSec extends Schema.SingleType {
+  collectionName: 'franco_secs';
+  info: {
+    singularName: 'franco-sec';
+    pluralName: 'franco-secs';
+    displayName: 'franco_sec';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    frnc_head: Attribute.String;
+    para_text: Attribute.Blocks;
+    franc_img: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::franco-sec.franco-sec',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::franco-sec.franco-sec',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSliderContentSliderContent extends Schema.CollectionType {
+  collectionName: 'slider_contents';
+  info: {
+    singularName: 'slider-content';
+    pluralName: 'slider-contents';
+    displayName: 'slider_content';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    svg: Attribute.RichText;
+    slider_head: Attribute.String;
+    slider_dec: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::slider-content.slider-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::slider-content.slider-content',
       'oneToOne',
       'admin::user'
     > &
@@ -802,10 +1070,18 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
+      'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'plugin::i18n.locale': PluginI18NLocale;
+      'api::about-sec.about-sec': ApiAboutSecAboutSec;
+      'api::automated-sec.automated-sec': ApiAutomatedSecAutomatedSec;
+      'api::automated-slider.automated-slider': ApiAutomatedSliderAutomatedSlider;
+      'api::banner-text.banner-text': ApiBannerTextBannerText;
+      'api::benefits-sec.benefits-sec': ApiBenefitsSecBenefitsSec;
+      'api::contact-sec.contact-sec': ApiContactSecContactSec;
+      'api::franco-sec.franco-sec': ApiFrancoSecFrancoSec;
+      'api::slider-content.slider-content': ApiSliderContentSliderContent;
     }
   }
 }

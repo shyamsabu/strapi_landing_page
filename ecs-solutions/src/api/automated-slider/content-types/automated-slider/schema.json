@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "automated_sliders",
+  "info": {
+    "singularName": "automated-slider",
+    "pluralName": "automated-sliders",
+    "displayName": "automated_slider",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slider_head": {
+      "type": "string"
+    },
+    "slider_img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "para_text": {
+      "type": "blocks"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "benefits_secs",
+  "info": {
+    "singularName": "benefits-sec",
+    "pluralName": "benefits-secs",
+    "displayName": "Benefits_sec"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product_img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "heading": {
+      "type": "string"
+    },
+    "discription": {
+      "type": "text"
+    }
+  }
+}
