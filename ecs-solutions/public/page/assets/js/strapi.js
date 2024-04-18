@@ -213,9 +213,13 @@ jQuery(function() {
             data: formData,// Convert the form data array to JSON string
             success: function(response9) {
                 console.log(response9);
+                // @ts-ignore
+                $('#footer-form')[0].reset();
+                $(this).prop('disabled', true);
             },
             
         });
+       
     });
 
 
