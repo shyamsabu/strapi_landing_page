@@ -222,6 +222,36 @@ jQuery(function() {
        
     });
 
+    $( "#btn_submit2 ").on( "click", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        var name = $('.bname').val();
+        var email = $('.bemail').val()
+        var phone = $('.bphone').val()
+        var message = $('.bcomments').val()
+        var formData = {
+            "data": { 
+            "name": name,
+            "email": email,
+            "phone": phone,
+            "message": message
+            }
+        };
+    
+        $.ajax({
+            url: 'http://localhost:1337/api/form-secs',
+            method: 'POST',
+            data: formData,// Convert the form data array to JSON string
+            success: function(response9) {
+                console.log(response9);
+                // @ts-ignore
+                $('#pop-up-form')[0].reset();
+                $(this).prop('disabled', true);
+            },
+            
+        });
+       
+    });
+
 
     $.ajax({
         url: 'http://localhost:1337/api/map?populate=%2A',

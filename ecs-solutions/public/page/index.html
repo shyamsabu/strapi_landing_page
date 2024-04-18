@@ -346,23 +346,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="modal-body">
         <div class="contact-form">
-          <form name="pop-up-form" id="pop-up-form" action="<?php echo $base_url;?>/landing/fp-mailing-solutions/mails/mail.php" method="POST">
+          <form name="pop-up-form" id="pop-up-form"  method="POST">
             <div class="input-holder">
-              <input tabindex="105" type="text" name="bname<?php echo $bfldToken;?>" id="bname<?php echo $bfldToken;?>" title="Name" class="form-elements required" placeholder="Name*">
+              <input tabindex="105" type="text" name="bname" id="bname" title="Name" class="form-elements required bname" placeholder="Name*">
             </div>
             <div class="input-holder">
-              <input tabindex="106" type="email" name="bemail<?php echo $bfldToken;?>" id="bemail<?php echo $bfldToken;?>" title="Email" class="form-elements required email" placeholder="Email*">
+              <input tabindex="106" type="email" name="bemail" id="bemail" title="Email" class="form-elements required email bemail" placeholder="Email*">
             </div>
             <div class="input-holder">
-              <input tabindex="107" type="tel" name="bphone<?php echo $bfldToken;?>" id="bphone<?php echo $bfldToken;?>" title="Phone" class="form-elements required tel" placeholder="Phone*">
+              <input tabindex="107" type="tel" name="bphone" id="bphone>" title="Phone" class="form-elements required tel bphone" placeholder="Phone*">
             </div>
             <div class="input-holder">
-              <textarea tabindex="108" name="bcomments<?php echo $bfldToken;?>" id="bcomments<?php echo $bfldToken;?>" title="Questions/Comments" class="form-elements" placeholder="Questions/Comments"></textarea>
+              <textarea tabindex="108" name="bcomments" id="bcomments" title="Questions/Comments" class="form-elements bcomments" placeholder="Questions/Comments"></textarea>
             </div>
             <div class="hRight">
               <input type="hidden" value="pop-up-form" id="formHidId2" name="formHidId2">
-						  <input type="hidden" name="bfldToken" value="<?php echo $bfldToken;?>">
-						  <input type="hidden" name="btoken" value="<?php echo $bToken;?>">
+						  <input type="hidden" name="bfldToken" value="">
+						  <input type="hidden" name="btoken" value="">
 						  <input type="hidden" name="recaptcha_id" id="recaptcha_id" value="2">
 						  <input type="hidden" name="recaptchaResponse2" id="recaptchaResponse2" value="">
 						  <input type="hidden" name="titleForm2" id="titleForm2" value="Office Equipment Supplier - ecsdigital.ca">
@@ -568,7 +568,7 @@ $('.price_slider').owlCarousel({
     });
     $('#btn_submit2').on('click',function(e){
       var b = $(this);
-      validation('pop-up-form','btn_submit2','form',b,'recaptchaResponse2');
+      validation('pop-up-form','btn_submit2','form',b,);
       e.preventDefault();
     });    
     $('.required').keypress(function(){
