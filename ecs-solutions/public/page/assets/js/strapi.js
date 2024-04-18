@@ -4,6 +4,7 @@ jQuery(function() {
         url: 'http://localhost:1337/api/banner-text?populate=%2A',
         method: 'GET',
         success: function(response1) {
+            console.log(response1);
             var banner_main = response1.data.attributes.TextMain;
             var contact_head = response1.data.attributes.contact_head;
             var banner_small = response1.data.attributes.TextSmall;
@@ -14,8 +15,11 @@ jQuery(function() {
             var get_quote = response1.data.attributes.get_quote;
             var get_quote_bg = response1.data.attributes.get_quote_bg.data.attributes.url;
             var price_sec_heading = response1.data.attributes.price_sec_heading;
+            var form_sec_bg = response1.data.attributes.form_sec_bg.data[0].attributes.url;
+            var form_sec_head = response1.data.attributes.form_sec_head;
+            var form_sec_dec = response1.data.attributes.form_sec_dec;
+
   
-            console.log(get_quote);
             $(".text-main").append(banner_main);
             $(".text-small").append(banner_small);
             $(".text-sub").append(banner_sub);
@@ -26,6 +30,9 @@ jQuery(function() {
             $(".get-quote").css("background-image", "url('http://localhost:1337" + get_quote_bg + "')");
             $(".project_banner").css("background-image", "url('http://localhost:1337" + banner_img + "')");
             $(".contact-main").css("background-image", "url('http://localhost:1337" + contact_bg + "')");
+            $('.fom_sec figure').append('<img src="http://localhost:1337'+ form_sec_bg +'" >');
+            $('.fom_sec .half-container h2').append(form_sec_head);
+            $('.fom_sec .contact-sub').append(form_sec_dec);
   
         },
         error: function(xhr, status, error) {
@@ -40,7 +47,6 @@ jQuery(function() {
       method: 'GET',
       success: function(response2) {
           response2.data.forEach(bnfit => {
-            console.log(bnfit);
               var bnfit_img = bnfit.attributes.product_img.data.attributes.url;
               var bnfit_heading = bnfit.attributes.heading;
               var bnfit_dec = bnfit.attributes.discription;
@@ -60,7 +66,6 @@ jQuery(function() {
           url: 'http://localhost:1337/api/about-sec?populate=%2A',
           method: 'GET',
           success: function(response3) {
-              console.log(response3);
               var sec_head_1 = response3.data.attributes.sec_title_1;
               var sec_head_2 = response3.data.attributes.sec_title_2;
               var sec_subtext = response3.data.attributes.sec_subText;
@@ -128,14 +133,12 @@ jQuery(function() {
         url: 'http://localhost:1337/api/automated-sliders?populate=%2A',
         method: 'GET',
         success: function(response6) {
-            console.log( response6);
             response6.data.forEach((bnfit,index) => {
-                console.log( bnfit,"index",index);
+               
                 var owlitem1 = owls1[index];
                 var owlitem2 = owls2[index];
                 var slider_head = bnfit.attributes.slider_head;
                 var slider_img = bnfit.attributes.slider_img.data.attributes.url;
-                console.log(slider_head);
                 var slider_dec = bnfit.attributes.para_text[0].children[0].text;                ;
                 $(owlitem1).append('<div class="item"><div class="tab-title">' + slider_head + '</div></div>');
                 $(owlitem2).append('<div class="item"><div class="tab-outer-wrap"><div class="left-wrap"><figure class="img-tab-fig"><img src=" http://localhost:1337' + slider_img + '"></figure></div><div class="right-wrap">' + slider_dec + '</div></div>');
@@ -174,19 +177,68 @@ jQuery(function() {
         url: 'http://localhost:1337/api/franco-sec?populate=%2A',
         method: 'GET',
         success: function(response8) {
-            console.log(response8,"ggufguyf");
            var frnc_img = response8.data.attributes.franc_img.data.attributes.url;
            var frnc_head = response8.data.attributes.frnc_head;
            var frnc_text = response8.data.attributes.para_text[0].children[0].text;
-           console.log(frnc_text);
            $(".postalia-text h2").append(frnc_head);
-           $(".postalia-text").append('<img src="http://localhost:1337' + frnc_img +' ">');
+           $(".post-img").append('<img src="http://localhost:1337' + frnc_img +' ">');
            $(".postalia-text").append(frnc_text);
 
 
         },
         error: function(xhr, status, error) {
             console.error(status, error);
+        }
+    });
+
+
+      $( "#btn_submit").on( "click", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        var name = $('#aname').val();
+        var email = $('#aemail').val()
+        var phone = $('#aphone').val()
+        var message = $('#acomments').val()
+        var formData = {
+            "data": { 
+            "name": name,
+            "email": email,
+            "phone": phone,
+            "message": message
+            }
+        };
+    
+        $.ajax({
+            url: 'http://localhost:1337/api/form-secs',
+            method: 'POST',
+            data: formData,// Convert the form data array to JSON string
+            success: function(response9) {
+                console.log(response9);
+            },
+            
+        });
+    });
+
+
+    $.ajax({
+        url: 'http://localhost:1337/api/map?populate=%2A',
+        method: 'GET',
+        success: function(response10) {
+            console.log(response10);
+            var iframe = response10.data.attributes.iframe;
+            $('.map').append(iframe);
+        }
+    });
+
+
+    $.ajax({
+        url: 'http://localhost:1337/api/header-sec?populate=%2A',
+        method: 'GET',
+        success: function(response11) {
+            console.log(response11);
+            var logo = response11.data.attributes.logo.data.attributes.url;
+            var phone = response11.data.attributes.phone;
+            $('.anc-txt').append(phone);
+            $('.logo-wrap a').append('<img src="http://localhost:1337' + logo +' " alt="Office Equipment Supplier - ecsdigital.ca" title="Office Equipment Supplier - ecsdigital.ca">');
         }
     });
 });

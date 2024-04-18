@@ -911,6 +911,9 @@ export interface ApiBannerTextBannerText extends Schema.SingleType {
     contact_bg: Attribute.Media;
     get_quote: Attribute.String;
     get_quote_bg: Attribute.Media;
+    form_sec_head: Attribute.String;
+    form_sec_dec: Attribute.Text;
+    form_sec_bg: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -992,6 +995,40 @@ export interface ApiContactSecContactSec extends Schema.CollectionType {
   };
 }
 
+export interface ApiFormSecFormSec extends Schema.CollectionType {
+  collectionName: 'form_secs';
+  info: {
+    singularName: 'form-sec';
+    pluralName: 'form-secs';
+    displayName: 'form_sec';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    email: Attribute.Email & Attribute.Required;
+    message: Attribute.Text & Attribute.Required;
+    phone: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::form-sec.form-sec',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::form-sec.form-sec',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFrancoSecFrancoSec extends Schema.SingleType {
   collectionName: 'franco_secs';
   info: {
@@ -1020,6 +1057,60 @@ export interface ApiFrancoSecFrancoSec extends Schema.SingleType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHeaderSecHeaderSec extends Schema.SingleType {
+  collectionName: 'header_secs';
+  info: {
+    singularName: 'header-sec';
+    pluralName: 'header-secs';
+    displayName: 'header_sec';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    logo: Attribute.Media;
+    phone: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::header-sec.header-sec',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::header-sec.header-sec',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMapMap extends Schema.SingleType {
+  collectionName: 'maps';
+  info: {
+    singularName: 'map';
+    pluralName: 'maps';
+    displayName: 'map';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    iframe: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::map.map', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::map.map', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -1080,7 +1171,10 @@ declare module '@strapi/types' {
       'api::banner-text.banner-text': ApiBannerTextBannerText;
       'api::benefits-sec.benefits-sec': ApiBenefitsSecBenefitsSec;
       'api::contact-sec.contact-sec': ApiContactSecContactSec;
+      'api::form-sec.form-sec': ApiFormSecFormSec;
       'api::franco-sec.franco-sec': ApiFrancoSecFrancoSec;
+      'api::header-sec.header-sec': ApiHeaderSecHeaderSec;
+      'api::map.map': ApiMapMap;
       'api::slider-content.slider-content': ApiSliderContentSliderContent;
     }
   }

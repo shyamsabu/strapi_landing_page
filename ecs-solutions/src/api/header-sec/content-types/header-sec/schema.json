@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "header_secs",
+  "info": {
+    "singularName": "header-sec",
+    "pluralName": "header-secs",
+    "displayName": "header_sec",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "phone": {
+      "type": "string"
+    }
+  }
+}

@@ -28,7 +28,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="logo-wrap">
             <figure>
               <a href="" title="Office Equipment Supplier - ecsdigital.ca">
-                <img src="assets/images/logo.png" alt="Office Equipment Supplier - ecsdigital.ca" title="Office Equipment Supplier - ecsdigital.ca">
+                
               </a>
             </figure>
           </div>
@@ -52,7 +52,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </svg>
               </div></a>
               <div class="tel-wrap">
-                <p><a href="tel:(647) 373-5146" class="anc-txt">(647) 373-5146</a></p>
+                <p><a href="tel:(647) 373-5146" class="anc-txt"></a></p>
               </div>
               </div>
             </div>
@@ -261,7 +261,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="col-lg-7 col-md-12">
           <figure class="post-img">
-            <img src="assets/images/mail.png">
           </figure>
         </div>
       </div>
@@ -282,39 +281,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M0 0H1920V183C1147.5 -53.3816 727.18 -52.5749 0 183V0Z"></path>
         </svg>
     </div>
-  <section class="full-width">
+  <section class="full-width fom_sec">
     <div class="col-left">
       <figure>
-        <img src="assets/images/contact-man.png">
+        
       </figure>
     </div>
     <div class="col-right">
       <div class="half-container">
-        <h2>Contact Us</h2>
-        <div class="contact-sub"> Need to improve the look of your products or your business? </div>
+        <h2></h2>
+        <div class="contact-sub"> </div>
         <div class="contact-form">
-          <form name="footer-form" id="footer-form" action="<?php echo $base_url;?>/landing/fp-mailing-solutions/mails/mail.php" method="POST">
+          <form name="footer-form" id="footer-form">
             <div class="input-holder">
-              <input tabindex="100" type="text" name="aname<?php echo $afldToken;?>" id="aname<?php echo $afldToken;?>" title="Name" class="form-elements required" placeholder="Name*">
+              <input tabindex="100" type="text" name="aname" id="aname" title="Name" class="form-elements required" placeholder="Name*">
             </div>
             <div class="input-holder">
-              <input tabindex="101" type="email" name="aemail<?php echo $afldToken;?>" id="aemail<?php echo $afldToken;?>" title="Email" class="form-elements required email" placeholder="Email*">
+              <input tabindex="101" type="email" name="aemail" id="aemail" title="Email" class="form-elements required email" placeholder="Email*">
             </div>
             <div class="input-holder">
-              <input tabindex="102" type="tel" name="aphone<?php echo $afldToken;?>" id="aphone<?php echo $afldToken;?>" title="Phone" class="form-elements required tel" placeholder="Phone*">
+              <input tabindex="102" type="tel" name="aphone" id="aphone" title="Phone" class="form-elements required tel" placeholder="Phone*">
             </div>
             <div class="input-holder">
-              <textarea tabindex="103" name="acomments<?php echo $afldToken;?>" id="acomments<?php echo $afldToken;?>" title="Questions/Comments" class="form-elements" placeholder="Questions/Comments"></textarea>
+              <textarea tabindex="103" name="acomments" id="acomments" title="Questions/Comments" class="form-elements" placeholder="Questions/Comments"></textarea>
             </div>
             <div class="hRight">
-              <input type="hidden" value="footer-form" id="formHidId1" name="formHidId1">
-						  <input type="hidden" name="afldToken" value="<?php echo $afldToken;?>">
-						  <input type="hidden" name="atoken" value="<?php echo $aToken;?>">
+              <!-- <input type="hidden" value="footer-form" id="formHidId1" name="formHidId1">
+						  <input type="hidden" name="afldToken" value="">
+						  <input type="hidden" name="atoken" value="">
 						  <input type="hidden" name="recaptcha_id" id="recaptcha_id" value="1">
               <input type="hidden" name="recaptchaResponse1" id="recaptchaResponse1" value="">
 						  <input type="hidden" name="titleForm1" id="titleForm1" value="Office Equipment Supplier - ecsdigital.ca">
-						  <input type="hidden" name="formName1" value="Contact Us">
-              <input tabindex="104" type="submit" name="submit btn_submit" id="btn_submit" title="Submit" class="btn_submit" value="SUBMIT">
+						  <input type="hidden" name="formName1" value="Contact Us"> -->
+              <input tabindex="109" type="button" name="btn_submit submit" id="btn_submit" title="Submit" class="btn_submit" value="SUBMIT">
             </div>
           </form>
         </div>
@@ -326,7 +325,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2878.167554871509!2d-79.02186198458395!3d43.831623648892815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4de2aa705ac61%3A0xe45f21011e6aabcb!2sECS%20Digital%20Solutions!5e0!3m2!1sen!2sin!4v1677481622840!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
 </div>
 
 
@@ -563,7 +562,7 @@ $('.price_slider').owlCarousel({
   $(document).ready(function(){
     $('#btn_submit').on('click',function(e){
       var a = $(this);
-      validation('footer-form','btn_submit','form',a,'recaptchaResponse1');
+      //validation('footer-form','btn_submit','form',a,'recaptchaResponse1');
       e.preventDefault();
     });
     $('#btn_submit2').on('click',function(e){

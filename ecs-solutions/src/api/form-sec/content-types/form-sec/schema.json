@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "form_secs",
+  "info": {
+    "singularName": "form-sec",
+    "pluralName": "form-secs",
+    "displayName": "form_sec",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "message": {
+      "type": "text",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    }
+  }
+}
